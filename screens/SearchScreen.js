@@ -15,18 +15,23 @@ import { XMarkIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
 import Loading from "../components/Loading";
 import debounce from "lodash";
-import { apiCall, fallbackMoviePoster, image342, searchMoviesEndpoint } from "../api/movieDb";
+import {
+  apiCall,
+  fallbackMoviePoster,
+  image342,
+  searchMoviesEndpoint,
+} from "../api/movieDb";
 
 const { width, height } = Dimensions.get("window");
 export default function SearchScreen() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const handleSearch = async (value) =>{
+  const handleSearch = async (value) => {
     setLoading(true);
-    const data = await apiCall(searchMoviesEndpoint(),{query: value});
-    if(data && data.results) setResults(data.results);
+    const data = await apiCall(searchMoviesEndpoint(), { query: value });
+    if (data && data.results) setResults(data.results);
     setLoading(false);
-  }
+  };
   const handleTextDebounce = useCallback(debounce(handleSearch, 400), []);
   const navigation = useNavigation();
   return (
@@ -72,7 +77,10 @@ export default function SearchScreen() {
                   >
                     <View style={tw`gap-y-2 mb-4`}>
                       <Image
-                        source={{uri: image342(item.backdrop_path) || fallbackMoviePoster}}
+                        source={{
+                          uri:
+                            image342(item.backdrop_path) || fallbackMoviePoster,
+                        }}
                         style={[
                           { width: width * 0.44, height: height * 0.3 },
                           tw`rounded-3xl`,
