@@ -80,7 +80,7 @@ export default function MovieScreen() {
       style={tw`flex-1 bg-neutral-900`}
     >
       {loading ? (
-        <View style={tw`absolute z-20 w-full bg-transparent`}>
+        <View style={tw`w-full bg-transparent`}>
           <Loading />
         </View>
       ) : (
@@ -116,12 +116,12 @@ export default function MovieScreen() {
         </View>
       )}
       <View style={[{ marginTop: -(height * 0.09) }, tw`gap-y-3`]}>
-        <Text style={tw`text-white text-center text-3xl font-bold`}>
+        <Text style={[tw`text-white text-center text-3xl`,{fontFamily:"Montserrat-SemiBold"}]}>
           {movie?.title}
         </Text>
         {movie?.id ? (
           <Text
-            style={tw`text-neutral-400 font-semibold text-base text-center`}
+            style={[tw`text-neutral-400 font-semibold text-base text-center`,{fontFamily: "Montserrat-SemiBold"}]}
           >
             {" "}
             {movie?.status} * {movie?.release_date.split("-")[0]} *{" "}
@@ -139,7 +139,7 @@ export default function MovieScreen() {
             return (
               <Text
                 key={index}
-                style={tw`text-neutral-400 font-semibold text-base text-center`}
+                style={[tw`text-neutral-400 font-semibold text-base text-center`, {fontFamily:"Montserrat-SemiBold"}]}
               >
                 {" "}
                 {genre?.name} {showDot ? " * " : null}
@@ -147,7 +147,7 @@ export default function MovieScreen() {
             );
           })}
         </ScrollView>
-        <Text style={tw`text-neutral-400 mx-4`}>{movie?.overview}</Text>
+        <Text style={[tw`text-neutral-400 mx-4`, {fontFamily: "Montserrat-Medium"}]}>{movie?.overview}</Text>
       </View>
       <Cast navigation={navigation} cast={cast} />
       {/* Similar Movies */}

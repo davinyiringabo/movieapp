@@ -43,7 +43,7 @@ export default function SearchScreen() {
           placeholder="Search Movie"
           placeholderTextColor={"lightgray"}
           onChangeText={handleSearch}
-          style={tw`pb-1 pl-6 flex-1 text-base font-semibold text-white`}
+          style={[tw`pb-1 pl-6 flex-1 text-base font-semibold text-white`, {fontFamily:"Montserrat-SemiBold"}]}
         />
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -54,7 +54,7 @@ export default function SearchScreen() {
       </View>
 
       {loading ? (
-        <View style={tw`w-full h-1/2`}>
+        <View style={[tw`w-full`, {height: height * 0.3}]}>
           <Loading />
         </View>
       ) : (
@@ -63,7 +63,7 @@ export default function SearchScreen() {
           contentContainerStyle={{ paddingHorizontal: 15 }}
           style={tw`gap-y-3`}
         >
-          <Text style={tw`text-white font-semibold ml-1 mb-3`}>
+          <Text style={[tw`text-white font-semibold ml-1 mb-3`, {fontFamily:"Montserrat-SemiBold"}]}>
             Results ({results.length})
           </Text>
           {results.length > 0 ? (
@@ -86,7 +86,7 @@ export default function SearchScreen() {
                           tw`rounded-3xl`,
                         ]}
                       />
-                      <Text style={tw`text-neutral-400 ml-1`}>
+                      <Text style={[tw`text-neutral-400 ml-1`, {fontFamily:"Montserrat-SemiBold"}]}>
                         {item.original_title.length > 19
                           ? item.original_title.slice(0, 19) + "..."
                           : item.original_title}
@@ -98,7 +98,7 @@ export default function SearchScreen() {
             </View>
           ) : (
             <View style={tw`flex-row justify-center mt-8`}>
-              <Text style={tw`text-[1rem] text-neutral-500`}>
+              <Text style={[tw`text-[1rem] text-neutral-500`, {fontFamily:"Montserrat-SemiBold"}]}>
                 No Movies Found!
               </Text>
             </View>

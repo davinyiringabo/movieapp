@@ -25,6 +25,7 @@ import {
   upcomingMoviesEndpoint,
 } from "../api/movieDb";
 const ios = Platform.OS;
+const Drawer = createDrawerNavigator();
 export default function HomeScreen() {
   const [trending, setTrending] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
@@ -72,9 +73,8 @@ export default function HomeScreen() {
       <SafeAreaView style={ios ? tw`mb-2` : tw`mb-3`}>
         <StatusBar barStyle={"light-content"} />
         <View style={tw`flex-row justify-between mx-4 mt-3`}>
-          <Bars3CenterLeftIcon size={"30"} strokeWidth={2} color={"white"} />
-          <Text style={tw`text-white text-3xl font-bold`}>
-            <Text style={tw`text-[#eab308]`}>M</Text>ovio
+          <Text style={[tw`text-white text-3xl`, {fontFamily: "Montserrat-SemiBold"}]}>
+            <Text style={[tw`text-[#eab308]`, {fontFamily: "Montserrat-SemiBold"}]}>M</Text>ovio
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Search")}>
             <MagnifyingGlassIcon size={30} strokeWidth={2} color={"white"} />

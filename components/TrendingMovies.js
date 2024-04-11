@@ -21,7 +21,7 @@ export default function TrendingMovies({ data }) {
   };
   return (
     <View style={tw`mb-8`}>
-      <Text style={tw`text-white text-xl mx-4 mb-2`}>Trending</Text>
+      <Text style={[tw`text-white text-xl mx-4 mb-2`, {fontFamily: "Montserrat-Medium"}]}>Trending</Text>
       <Carousel
         data={data}
         renderItem={({ item }) => (

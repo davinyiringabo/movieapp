@@ -7,6 +7,11 @@ import HomeScreen from "../screens/HomeScreen";
 import MovieScreen from "../screens/MovieScreen";
 import PersonScreen from "../screens/PersonScreen";
 import SearchScreen from "../screens/SearchScreen";
+import AllDetailsScreen from "../screens/AllDetailsScreen";
+import LoginScreen from "../screens/LoginScreen";
+import SignupScreen from "../screens/SignupScreen";
+import LandingScreen from "../screens/LandingScreen";
+import DrawerNavigation from "./DrawerNavigation";
 const Stack = createNativeStackNavigator();
 export default function AppNavigation() {
   return (
@@ -16,10 +21,14 @@ export default function AppNavigation() {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Landing" component={LandingScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Movie" component={MovieScreen} />
         <Stack.Screen name="Person" component={PersonScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen name="AllDetails" component={AllDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

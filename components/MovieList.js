@@ -19,10 +19,10 @@ export default function MovieList({ title, data, hideSeeAll }) {
   return (
     <View style={tw`mb-8 gap-y-4`}>
       <View style={tw`mx-4 flex-row justify-between items-center`}>
-        <Text style={tw`text-white text-xl`}>{title}</Text>
+        <Text style={[tw`text-white text-xl`, {fontFamily: "Montserrat-Medium"}]}>{title}</Text>
         {!hideSeeAll && (
           <TouchableOpacity>
-            <Text style={tw`text-[#eab308] text-lg`}>See All</Text>
+            <Text style={[tw`text-[#eab308] text-lg`, {fontFamily: "Montserrat-Medium"}]}>See All</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -47,7 +47,7 @@ export default function MovieList({ title, data, hideSeeAll }) {
                     tw`rounded-3xl`,
                   ]}
                 />
-                <Text style={tw`text-neutral-300 ml-1`}>
+                <Text style={[tw`text-neutral-300 ml-1 mt-1`, {fontFamily: "Montserrat-Medium"}]}>
                   {item.title.length > 14
                     ? item.title.slice(0, 14) + "..."
                     : item.title}

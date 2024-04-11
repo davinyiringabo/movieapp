@@ -6,7 +6,7 @@ import * as Progress from "react-native-progress";
 const { width, height } = Dimensions.get("window");
 export default function Loading() {
   return (
-    <View style={[{ height, width }, tw`flex-row justify-center items-center`]}>
+    <View style={[tw`w-full h-full flex-row justify-center items-center`]}>
       <Progress.CircleSnail thickness={6} size={90} color={"#eab308"} />
     </View>
   );
