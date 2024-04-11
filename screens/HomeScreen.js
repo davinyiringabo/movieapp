@@ -73,8 +73,21 @@ export default function HomeScreen() {
       <SafeAreaView style={ios ? tw`mb-2` : tw`mb-3`}>
         <StatusBar barStyle={"light-content"} />
         <View style={tw`flex-row justify-between mx-4 mt-3`}>
-          <Text style={[tw`text-white text-3xl`, {fontFamily: "Montserrat-SemiBold"}]}>
-            <Text style={[tw`text-[#eab308]`, {fontFamily: "Montserrat-SemiBold"}]}>M</Text>ovio
+          <Text
+            style={[
+              tw`text-white text-3xl`,
+              { fontFamily: "Montserrat-SemiBold" },
+            ]}
+          >
+            <Text
+              style={[
+                tw`text-[#eab308]`,
+                { fontFamily: "Montserrat-SemiBold" },
+              ]}
+            >
+              M
+            </Text>
+            ovio
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Search")}>
             <MagnifyingGlassIcon size={30} strokeWidth={2} color={"white"} />

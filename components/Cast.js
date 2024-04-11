@@ -6,7 +6,14 @@ import { fallbackPersonImage, image185 } from "../api/movieDb";
 export default function Cast({ cast, navigation }) {
   return (
     <View style={tw`my-6`}>
-      <Text style={[tw`text-white text-lg mx-4 mb-5`, {fontFamily:"Montserrat-SemiBold"}]}>Top Cast</Text>
+      <Text
+        style={[
+          tw`text-white text-lg mx-4 mb-5`,
+          { fontFamily: "Montserrat-SemiBold" },
+        ]}
+      >
+        Top Cast
+      </Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -34,12 +41,22 @@ export default function Cast({ cast, navigation }) {
                     style={{ width: "90%", flex: 1 }}
                   />
                 </View>
-                <Text style={[tw`text-white text-xs mt-1`, {fontFamily:"Montserrat-Medium"}]}>
+                <Text
+                  style={[
+                    tw`text-white text-xs mt-1`,
+                    { fontFamily: "Montserrat-Medium" },
+                  ]}
+                >
                   {person.character.length > 10
                     ? person.character.slice(0, 10) + "..."
                     : person.character}
                 </Text>
-                <Text style={[tw`text-neutral-400 text-xs mt-1`, {fontFamily:"Montserrat-Medium"}]}>
+                <Text
+                  style={[
+                    tw`text-neutral-400 text-xs mt-1`,
+                    { fontFamily: "Montserrat-Medium" },
+                  ]}
+                >
                   {person.original_name.length > 10
                     ? person.original_name.slice(0, 10) + "..."
                     : person.original_name}
